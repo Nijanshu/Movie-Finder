@@ -1,5 +1,5 @@
 let api="https://www.omdbapi.com/?i=tt3896198&apikey=686d2122&s="
-let api_k="http://www.omdbapi.com/?apikey=686d2122&i="
+let api_k="https://www.omdbapi.com/?apikey=686d2122&i="
 let srch=document.getElementById("srch");
 let tile=document.getElementsByClassName("tile")[0];
 
