@@ -9,7 +9,13 @@ function serch(){
     if (query){
         getMovie(api+query)
     }
+    
 }
+var input = document.getElementById("srch");
+input.addEventListener("keypress", function(event) {
+    if(event.key ==="Enter"){
+        document.getElementById("clk").click();
+}})
 
  async function getMovie(url){
     console.log(url)
@@ -34,19 +40,22 @@ function mdisplay(imovie){
     let melem=document.createElement("div")
     melem.classList.add("mcard")
     melem.innerHTML=`
-    <div class="title">
-    <div class="til">
-    <img src="${imovie.Poster}" width="300px" height="300px"/>
-    <br>
-    <div class="desc">
+   
+     
+    
+    <div class="card position-relative row top-0 start-50 translate-middle-x my-3" style="width: 18rem;">
+    <img src="${imovie.Poster}" class="card-img-top" alt="...">
+    <div class="card-body">
     <p class="movie-title"><b>Title: </b><span class="value">${imovie.Title}</span></p>
     <p class="movie-title"><b>Rating: </b><span class="value">${imovie.imdbRating}</span></p> 
     <p class="movie-title"><b>Director: </b><span class="value">${imovie.Director}</span></p> 
     <p class="movie-title"><b>Released Date: </b><span class="value">${imovie. Released}</span></p>
     <p class="movie-title"><b>Genre: </b><span class="value">${imovie.Genre}</span></span>
     <p class="movie-title"><b>Language(s): </b><span class="value">${imovie.Language}</span></span>
-    </div> 
-    </div>
-     </div> `
+   </div>
+  </div>
+  `
+
+  
     tile.appendChild(melem)
 }
